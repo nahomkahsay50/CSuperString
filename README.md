@@ -24,7 +24,7 @@ A custom C++ string class built from scratch using raw `char*` and manual heap m
 
 ## Features
 
-## Constructors
+### Constructors
 Supports construction from nearly any primitive type:
 
 ```cpp
@@ -40,14 +40,14 @@ CSuperString ss9(2.71828);         // double
 CSuperString ss10(ss2);            // Copy constructor
 ```
 
-# Assignment Operators
+### Assignment Operators
 ```cpp
 ss = "Hello";   // const char*
 ss = 'Z';       // char
 ss = other;     // CSuperString (with self-assignment guard)
 ```
 
-## Concatenation Operators
+### Concatenation Operators
 ```cpp
 ss += " World";     // += const char*
 ss += '!';          // += char
@@ -58,7 +58,7 @@ CSuperString result = "Prefix" + ss;    // char* + SS
 CSuperString result = ss + "Suffix";    // SS + char*
 ```
 
-## Search Methods
+### Search Methods
 ```cpp
 ss.FindFirstIndexOf('o');                    // First occurrence of char
 ss.FindFirstIndexOf('o', 5);                 // Search starting at index
@@ -68,7 +68,7 @@ ss.FindFirstIndexOf("Star", 5);              // Substring search with offset
 ss.FindLastIndexOf("Star");                  // Last occurrence of substring
 ```
 
-## Transformation Methods
+### Transformation Methods
 These return a new string and do **not** modify the original:
 ```cpp
 ss.ToUpperCase();   // "i love c++"  →  "I LOVE C++"
@@ -79,7 +79,7 @@ ss.Trim();          // Strips both ends
 ss.Reverse();       // "Hello"  →  "olleH"
 ```
 
-## Substring Extraction
+### Substring Extraction
 ```cpp
 ss.Left(5);               // First 5 characters
 ss.Right(5);              // Last 5 characters
@@ -95,13 +95,13 @@ ss.Insert('!', 16);                        // Insert char at index
 ss.Insert(" So Much", 16);                 // Insert substring at index
 ```
 
-## Subscript Operator
+### Subscript Operator
 ```cpp
 char c = ss[0];     // Read access
 ss[0] = 'J';        // Write access
 ```
 
-## Type Conversion
+### Type Conversion
 ```cpp
 ss.ToString();      // const char*
 ss.ToBoolean();     // "true"/"1" → true, else false
@@ -112,13 +112,13 @@ ss.ToFloat();
 ss.ToDouble();
 ```
 
-## Stream Operators
+### Stream Operators
 ```cpp
 cout << ss;    // Output
 cin  >> ss;    // Input
 ```
 
-## Comparison Operators
+### Comparison Operators
 Comparisons use ASCII ordering via `strcmp`:
 ```cpp
 ss1 == ss2
